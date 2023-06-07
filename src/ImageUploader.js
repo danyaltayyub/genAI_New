@@ -20,9 +20,6 @@ const ImageUploader = () => {
     const checkCredits = async () => {
         const endpoint_url = "https://api.pebblely.com/credits/v1/"
         const headers = {
-            "Content-Type": "application/json",
-            "Accept": "*/*",
-            "Connection": "keep-alive",
             "X-Pebblely-Access-Token": "7c9dbfb1-e2ad-4c8e-9aaa-91aa1db360d2",
         }
         axios.get(endpoint_url, { headers })
