@@ -5,6 +5,7 @@ const ImageUploader = () => {
     const [base64Image, setBase64Image] = useState('');
 
     const handleImageChange = (event) => {
+        console.log('select image', selectedImage)
         const file = event.target.files[0];
         setSelectedImage(file);
 
