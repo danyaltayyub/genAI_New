@@ -15,25 +15,6 @@ const ImageUploader = () => {
     };
     reader.readAsDataURL(file)
   };
-  
-  const handleImageUpload = () => {
-    if (selectedImage) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const base64Data = reader.result.toString();
-
-        console.log(typeof(base64Data),base64Data,'\asdasd')
-        sendImageToEndpoint(base64Data);
-      };
-      reader.readAsDataURL(selectedImage);
-    }
-  };
-
-
-    //     json={
-    //         "image": sample_base64,
-    //         "theme": "Surprise me"
-    //     }
 
   const checkCredits = async() => {
     const endpoint_url = "http://api.pebblely.com/credits/v1/"
@@ -53,29 +34,8 @@ const ImageUploader = () => {
   }
 
   const sendImageToEndpoint = async(base64Data) => {
-    const endpointUrl = "https://api.pebblely.com/create-background/v1/"; 
-    // fetch(endpointUrl, {
-    //   method: "POST",
-    //   headers:{
-    //     "Content-Type": "application/json",
-    //     "X-Pebblely-Access-Token": "7c9dbfb1-e2ad-4c8e-9aaa-91aa1db360d2",
-    // },
-    // body:{
-    //             "image": base64Data,
-    //             "theme": "Surprise me"
-    //         }
-    // })
-
-    
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     console.log('this is data:',data)
-    //     // Handle the response from the endpoint
-    //   })
-    //   .catch(error => {console.log('THis is Else',error)
-    //     // Handle any errors that occur during the request
-    //   });
-    console.log('here', base64Image)
+    const endpointUrl = "https://api.pebblely.com/create-background/v1/";
+    console.log('here base64Image=====', base64Image)
 
     const headers={
         "Content-Type": "application/json",
@@ -92,18 +52,6 @@ const ImageUploader = () => {
     .catch(error => {
         console.log("Error", error)
     })
-
-    // const data = await axios.get(endpointUrl, {
-    //     withCredentials:false,
-    //     headers: {
-    //         'HOST':'www.pebblely.com',
-    //         'Content-Type': 'application/json',
-    //         "X-Pebblely-Access-Token": "7c9dbfb1-e2ad-4c8e-9aaa-91aa1db360d2"   ,
-    //         'Access-Control-Allow-Origin':"*"
-    //          }
-    //   }
-    // )
-    //   console.log({data})
   };
   return (
     <div>
