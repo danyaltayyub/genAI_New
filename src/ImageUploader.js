@@ -27,10 +27,10 @@ const ImageUploader = () => {
         }
         axios.get(endpoint_url, { headers })
             .then(resp => {
-                console.log("Response", resp)
+                console.log("Response=", resp)
             })
-            .error(err => {
-                console.log('Error', err)
+            .catch(err => {
+                console.log('Error=', err)
             })
     }
 
@@ -48,10 +48,10 @@ const ImageUploader = () => {
         }
         axios.post(endpointUrl, data, { headers })
             .then(res => {
-                console.log("Response", res)
+                console.log("Response=", res)
             })
             .catch(error => {
-                console.log("Error", error)
+                console.log("Error=", error)
             })
     };
     return (
