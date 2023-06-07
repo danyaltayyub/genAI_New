@@ -18,7 +18,7 @@ const ImageUploader = () => {
     };
 
     const checkCredits = async () => {
-        const endpoint_url = "http://api.pebblely.com/credits/v1/"
+        const endpoint_url = "https://api.pebblely.com/credits/v1/"
         const headers = {
             "Content-Type": "application/json",
             "Accept": "*/*",
